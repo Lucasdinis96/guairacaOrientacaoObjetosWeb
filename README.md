@@ -1,3 +1,3 @@
-Aula 01
+Aula 02
 
-Instalção do XAMMP, composer, Laravel e configuração das mesmas.
+Conceitos de Rotas, Controllers e Views
