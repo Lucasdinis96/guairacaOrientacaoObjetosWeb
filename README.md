@@ -1,11 +1,12 @@
-Aula 04 - Eloquent
+Aula 04 - Criptografia
 
-Criar controller - php artisan make:controller ContactController
+Utilizada para proteger dados
 
-Criar migration - php artisan make:migration create_contacts_table
+php artisan key: generate - comando para gerar chave de criptografia
 
-Criar Seeder - php artisan make:seeder ContactsSeeder
 
-Criar model - php artisan make:model Contact
+rodar php artisan ke:generate
 
-Nullable - pode ser nulo
+rodar php artisan serve
+
+abrir tabela de contatos
