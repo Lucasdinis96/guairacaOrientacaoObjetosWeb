@@ -1,12 +1,15 @@
-Aula 04 - Criptografia
+Aula 06 - Exercício projeto
 
-Utilizada para proteger dados
+Arquivos Criados:
 
-php artisan key: generate - comando para gerar chave de criptografia
+    Model - app/Models/Products.php
+    Migration - database/migrations/2025_08_07_222048_create_table_products.php
+    Controller - app/Http/Controllers/ProductController.php
+    View - resources/views/product.blade.php
+    Seeder - database/seeders/ProductsSeeder.php
+    
+Arquivos Modificados:
 
+    database/seeders/DatabaseSeeder.php - adicionado invocalção de seeder ProductsSeeder.php
 
-rodar php artisan ke:generate
-
-rodar php artisan serve
-
-abrir tabela de contatos
+    routes/web.php - adicionado rota para view product.blade.php
