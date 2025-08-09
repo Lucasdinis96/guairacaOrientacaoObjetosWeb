@@ -10,6 +10,6 @@ Arquivos Criados:
     
 Arquivos Modificados:
 
-    database/seeders/DatabaseSeeder.php - adicionado invocalção de seeder ProductsSeeder.php
+    database/seeders/DatabaseSeeder.php - adicionado invocação de seeder ProductsSeeder.php
 
     routes/web.php - adicionado rota para view product.blade.php
