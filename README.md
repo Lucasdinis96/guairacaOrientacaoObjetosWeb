@@ -1,17 +1,9 @@
-Aula 08 - CRUD
+Aula 09 - Atividade 21/08
 
-Acrônimo para Create, read, update e delete.
+php artisan make:model nome -m
+php artisan make:controller nome --resource
 
-Aluno -> Livros -> Professor
-
-CRUD
-
-Passos
-1º: Criar uma migration - representação em código das tabelas de um banco de dados;
-2º: Criar uma model - representação dos campos da base, para que possam ser salvos;
-3º: Criar uma controller - concentra toda a lógica, chamando views e models, como exemplo;
-4º: Criar as rotas - definição de caminhos
-5º: Criar as views - paginas para os usuários
-
-php artisan make:model nome_model -m
-(-m: comando para criar a migration junto com a model)
+Arquivos criados:
+    Model - /home/user/Documentos/guairaca/laravel/app/Models/Professor.php
+    Migration - /home/user/Documentos/guairaca/laravel/database/migrations/2025_08_21_221813_create_professors_table.php
+    Controller - /home/user/Documentos/guairaca/laravel/app/Http/Controllers/ProfessorController.php
