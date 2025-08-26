@@ -1,10 +1,6 @@
-Aula 09 - Atividade 21/08
+Aula 10 - Blade
 
-php artisan make:model nome -m
-php artisan make:controller nome --resource
+Função do laravel utilizda para reutilização de componentes no projeto
 
-Arquivos criados:
-
-    Model - /home/user/Documentos/guairaca/laravel/app/Models/Professor.php
-    Migration - /home/user/Documentos/guairaca/laravel/database/migrations/2025_08_21_221813_create_professors_table.php
-    Controller - /home/user/Documentos/guairaca/laravel/app/Http/Controllers/ProfessorController.php
+resouces - conjuntos de rotas com get, posts,
+middleware - serve para proteger as rotas por autenticação
