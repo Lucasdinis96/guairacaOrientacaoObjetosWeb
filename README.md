@@ -1,6 +1,3 @@
-Aula 10 - Blade
+Aula 11 - Resources: Construção de views
 
-Função do laravel utilizda para reutilização de componentes no projeto
-
-resouces - conjuntos de rotas com get, posts,
-middleware - serve para proteger as rotas por autenticação
+@extends() - herda uma view

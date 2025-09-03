@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+// use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call ([
             FlightSeeder::class,
             ContactsSeeder::class,
-            ProductsSeeder::class
+            ProductsSeeder::class,
+            AlunoSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
