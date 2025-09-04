@@ -10,7 +10,7 @@ class ProfessorController extends Controller
 
     public function index() {
         $professors = Professor::all();
-        return view('professors.index',compact('professors'));
+        return view('professors.index',compact('professores'));
     }
 
     public function create() {
@@ -37,6 +37,6 @@ class ProfessorController extends Controller
 
     public function destroy(Professor $professor) {
         $professor->delete();
-        return redirect()->route('alunos.index');
+        return redirect()->route('professors.index');
     }
 }

@@ -33,14 +33,17 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($alunos as $aluno)
                                 <tr>
-                                    <td class="px-6 py-4 text-center whitespace-nowrap">
-                                        {{ $aluno -> nome }}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        {{ $aluno -> email }}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        {{ $aluno -> matricula }}
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> nome }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> email }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> matricula }}</td>
+                                    <td class="px-6 py-6 whitespece-nowrap flex justify-center">
+                                        <a href="{{ route('alunos.edit',$aluno->id) }}"  class="text-indigo-600 hover:text-indigo-900 mr3">Editar</a>
+                                        &nbsp
+                                        <form action="{{ route('alunos.destroy',$aluno->id) }}" method="POST" class="inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover:text-red-900">Excluir</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

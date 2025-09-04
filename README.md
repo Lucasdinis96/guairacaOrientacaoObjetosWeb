@@ -1,3 +1,1 @@
-Aula 11 - Resources: Construção de views
-
-@extends() - herda uma view
+Aula 12 - Criação das paginas de editar e deletar
