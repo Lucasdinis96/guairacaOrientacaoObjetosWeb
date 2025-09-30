@@ -11,7 +11,7 @@ class AlunoController extends Controller
      * Display a listing of the resource.
      */
     public function index() {
-        $alunos = Aluno::all();
+        $alunos = Aluno::paginate(10);
         return view('alunos.index',compact('alunos'));
     }
 

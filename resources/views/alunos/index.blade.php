@@ -16,6 +16,9 @@
                         <table class="w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50 dark:bg-gray-700">
                             <tr>
+                                 <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Id
+                                </th>
                                 <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Nome
                                 </th>
@@ -33,6 +36,7 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($alunos as $aluno)
                                 <tr>
+                                    <td class="px-6 py-3 whitespace-nowrap text-center">{{ $aluno -> id }}</td>
                                     <td class="px-6 py-3 whitespace-nowrap text-center">{{ $aluno -> nome }}</td>
                                     <td class="px-6 py-3 whitespace-nowrap">{{ $aluno -> email }}</td>
                                     <td class="px-6 py-3 whitespace-nowrap">{{ $aluno -> matricula }}</td>
@@ -49,6 +53,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="mt-4">
+                            {{ $alunos->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
