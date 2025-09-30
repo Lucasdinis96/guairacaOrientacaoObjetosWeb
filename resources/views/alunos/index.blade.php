@@ -33,10 +33,10 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($alunos as $aluno)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> nome }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> email }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $aluno -> matricula }}</td>
-                                    <td class="px-6 py-6 whitespece-nowrap flex justify-center">
+                                    <td class="px-6 py-3 whitespace-nowrap text-center">{{ $aluno -> nome }}</td>
+                                    <td class="px-6 py-3 whitespace-nowrap">{{ $aluno -> email }}</td>
+                                    <td class="px-6 py-3 whitespace-nowrap">{{ $aluno -> matricula }}</td>
+                                    <td class="px-6 py-3 whitespece-nowrap flex justify-center space-x-7">
                                         <a href="{{ route('alunos.edit',$aluno->id) }}"  class="text-indigo-600 hover:text-indigo-900 mr3">Editar</a>
                                         &nbsp
                                         <form action="{{ route('alunos.destroy',$aluno->id) }}" method="POST" class="inline-block">
