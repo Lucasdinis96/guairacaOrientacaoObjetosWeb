@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Livro;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Aluno;
 
-class AlunoSeeder extends Seeder
+class LivroSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Aluno::factory()->count(50)->create();
+        Livro::factory()->count(50)->create();
     }
 }

@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             ContactsSeeder::class,
             ProductsSeeder::class,
             AlunoSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            LivroSeeder::class
         ]);
     }
 }
