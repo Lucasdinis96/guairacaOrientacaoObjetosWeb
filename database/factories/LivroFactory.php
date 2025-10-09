@@ -19,14 +19,12 @@ class LivroFactory extends Factory {
     public function definition(): array
     {
 
-        $title = $this->fake()->words(3, true);
-
         return [
-            'titulo' => $title,
+            'titulo' => fake()->words(3, true),
             'autor' => fake()->name(),
-            'isbn' => fake()->numerifyy('#################'),
+            'isbn' => fake()->randomNumber(5,true),
             'editora' => fake()->company(),
-            'ano_publicacao' => date('Y')
+            'ano_publicacao' => fake()->dateTimeThisCentury()
         ];
     }
 }
