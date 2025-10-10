@@ -21,7 +21,7 @@ class LivroController extends Controller {
     }
 
     public function edit(Livro $livro) {
-        return view ('livros.edit', compact('livros'));
+        return view ('livros.edit', compact('livro'));
     }
 
     public function update(Request $request, Livro $livro) {

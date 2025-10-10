@@ -12,9 +12,9 @@
                 <a href="{{ route('livros.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
                     Novo Livro
                 </a>
-                <div class="overflow-x-auto">
+                <div class="overflow-x-auto py-3">
                     <table class="w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50 darl:bg-gray-700">
+                        <thead class="bg-gray-50 dark:bg-gray-700">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Título
@@ -45,7 +45,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $livro->editora }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $livro->ano_publicacao }}</td>
                                         <td class="px-5 py-4 whitespace-nowrap">
-                                            <a href="{{ route('livros.edit',$livro->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>
+                                            <a href="{{ route('livros.edit', $livro->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>
                                             <form action="{{ route('livros.destroy', $livro->id) }}" method="POST" class="inline-block">
                                                 @csrf
                                                 @method('DELETE')
@@ -53,12 +53,13 @@
                                             </form>
                                         </td>
                                     </tr>
-                                {{-- @empty
+                                @empty($livros)
                                     <tr>
                                         <td colspan="6" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-300">
                                             Nenhum livro encontrado!
                                         </td>
-                                @endempty --}}
+                                    </tr>
+                                @endempty
                                 @endforeach
                             </tbody>
                     </table>

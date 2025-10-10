@@ -9,8 +9,8 @@ class ProfessorController extends Controller
 {
 
     public function index() {
-        $professors = Professor::all();
-        return view('professors.index',compact('professores'));
+        $professors = Professor::paginate(10);
+        return view('professors.index',compact('professors'));
     }
 
     public function create() {
@@ -27,7 +27,7 @@ class ProfessorController extends Controller
     }
 
     public function edit(Professor $professor) {
-        return view ('professors.edit',compact('professors'));
+        return view ('professors.edit',compact('professor'));
     }
 
     public function update(Request $request, Professor $professor) {
