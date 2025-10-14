@@ -53,13 +53,13 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @empty($livros)
+                                    @empty($livros)
                                     <tr>
                                         <td colspan="6" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-300">
                                             Nenhum livro encontrado!
                                         </td>
                                     </tr>
-                                @endempty
+                                    @endempty
                                 @endforeach
                             </tbody>
                     </table>

@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Aluno;
+use App\Models\Emprestimo;
+use App\Models\Livro;
+use Illuminate\Http\Request;
+
+class EmprestimoController extends Controller
+{
+    public function index(){
+        $emprestimo = Emprestimo::with('aluno','livro')->get();
+        return view('emprestimos.index', compact('emprestimos'));
+    }
+
+    public function create() {
+        $aluno = Aluno::all();
+        $livro = Livro::all();
+        return view('emprestimos.create', compact ('alunos', 'livros'));
+    }
+
+    public function store(Request $request) {
+        $request->validate([
+            'aluno_id' => ['required', 'exists:aluno,id'],
+            'livro_id' => ['required', 'exists:livro,id,'],
+            'data_emprestimo' => ['required', 'date']
+        ]);
+
+        Emprestimo::create ([
+            'aluno_id' => $request->aluno_id,
+            'livro_id' => $request->livro_id,
+            'data_emprestimo' => $request->data_emprestimo
+        ]);
+
+        return redirect()->route('emprestimos.index')->with('sucess', 'Livro emprestado com sucesso');
+    }
+
+    public function devolver(Emprestimo $emprestimo){
+        $emprestimo->update(['data_devolução' => now()]);
+
+        return redirect()->route('emprestimos.index')->with('sucess', 'Livro devolvido com sucesso');
+    }
+}

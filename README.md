@@ -1,1 +1,1 @@
-Aula 17 - pagina de edição e criação de livros
+Aula 18 - criação da model, migration e controller de emprestimos
