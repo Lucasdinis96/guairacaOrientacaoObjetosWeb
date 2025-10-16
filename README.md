@@ -1,1 +1,1 @@
-Aula 18 - criação da model, migration e controller de emprestimos
+Aula 19 - Criação das views index, create e edit de emprestimos

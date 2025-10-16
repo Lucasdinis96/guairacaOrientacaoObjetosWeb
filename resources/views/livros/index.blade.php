@@ -37,30 +37,29 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach ( $livros as $livro )
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $livro->titulo }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $livro->autor }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $livro->isbn }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $livro->editora }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $livro->ano_publicacao }}</td>
-                                        <td class="px-5 py-4 whitespace-nowrap">
-                                            <a href="{{ route('livros.edit', $livro->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>
-                                            <form action="{{ route('livros.destroy', $livro->id) }}" method="POST" class="inline-block">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="text-red-600 hover-text-red-900">Excluir</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @empty($livros)
+                            @forelse ( $livros as $livro )
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $livro->titulo }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $livro->autor }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $livro->isbn }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $livro->editora }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $livro->ano_publicacao }}</td>
+                                    <td class="px-5 py-4 whitespace-nowrap">
+                                        <a href="{{ route('livros.edit', $livro->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>
+                                        <form action="{{ route('livros.destroy', $livro->id) }}" method="POST" class="inline-block">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover-text-red-900">Excluir</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @empty
                                     <tr>
                                         <td colspan="6" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-300">
                                             Nenhum livro encontrado!
                                         </td>
                                     </tr>
-                                    @endempty
-                                @endforeach
+                            @endforelse
                             </tbody>
                     </table>
                     <div class="mt-4">

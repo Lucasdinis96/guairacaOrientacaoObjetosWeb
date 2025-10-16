@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class EmprestimoController extends Controller
 {
     public function index(){
-        $emprestimo = Emprestimo::with('aluno','livro')->get();
+        $emprestimos = Emprestimo::with('aluno','livro')->get();
         return view('emprestimos.index', compact('emprestimos'));
     }
 
