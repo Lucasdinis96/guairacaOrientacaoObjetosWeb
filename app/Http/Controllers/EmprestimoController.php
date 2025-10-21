@@ -15,16 +15,16 @@ class EmprestimoController extends Controller
     }
 
     public function create() {
-        $aluno = Aluno::all();
-        $livro = Livro::all();
+        $alunos = Aluno::all();
+        $livros = Livro::all();
         return view('emprestimos.create', compact ('alunos', 'livros'));
     }
 
     public function store(Request $request) {
         $request->validate([
-            'aluno_id' => ['required', 'exists:aluno,id'],
-            'livro_id' => ['required', 'exists:livro,id,'],
-            'data_emprestimo' => ['required', 'date']
+            'aluno_id' => 'required|exists:alunos,id',
+            'livro_id' => 'required|exists:livros,id',
+            'data_emprestimo' => 'required|date'
         ]);
 
         Emprestimo::create ([
@@ -33,12 +33,12 @@ class EmprestimoController extends Controller
             'data_emprestimo' => $request->data_emprestimo
         ]);
 
-        return redirect()->route('emprestimos.index')->with('sucess', 'Livro emprestado com sucesso');
+        return redirect()->route('emprestimos.index')->with('success', 'Livro emprestado com sucesso');
     }
 
     public function devolver(Emprestimo $emprestimo){
-        $emprestimo->update(['data_devolução' => now()]);
+        $emprestimo->update(['data_devolucao' => now()]);
 
-        return redirect()->route('emprestimos.index')->with('sucess', 'Livro devolvido com sucesso');
+        return redirect()->route('emprestimos.index')->with('success', 'Livro devolvido com sucesso');
     }
 }

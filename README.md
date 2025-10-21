@@ -1,1 +1,1 @@
-Aula 19 - Criação das views index, create e edit de emprestimos
+Aula 20 - criação de views e rotas de emprestimos.

@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('/professors', ProfessorController::class);
     Route::resource('/livros', LivroController::class);
     Route::resource('/emprestimos', EmprestimoController::class);
+
+    Route::post('/emprestimos/{emprestimo}/devolver', [EmprestimoController::class, 'devolver'])->name('emprestimos.devolver');
 });
 
 require __DIR__.'/auth.php';

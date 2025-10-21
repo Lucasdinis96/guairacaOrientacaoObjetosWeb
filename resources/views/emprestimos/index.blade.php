@@ -14,7 +14,7 @@
                 </a>
                 <div class="overflow-x-auto py-3">
                     <table class="w-full divide-y divide-gray-200">
-                        <thead>
+                        <thead class="bg-gray-50 dark:bg-gray-700">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Aluno
@@ -28,6 +28,9 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Data devolução
                                 </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Ações
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -38,17 +41,17 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $emprestimo->data_emprestimo }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $emprestimo->data_devolucao }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if (!emprestimo->data_devolucao)
-                                    <form action="{{ route('emprestimos.devolver', $emprestimo->id) }}" method="POST" class="inline-block">
-                                        @csrf
-                                        <button type="submit" class="text-red-600 hover:text-red-900">Devolver</button>
-                                    </form>
+                                    @if (!$emprestimo->data_devolucao)
+                                        <form action="{{ route('emprestimos.devolver', $emprestimo->id) }}" method="POST" class="inline-block">
+                                            @csrf
+                                            <button type="submit" class="text-red-600 hover:text-red-900">Devolver</button>
+                                        </form>
                                     @endif
                                 </td>
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-300">
+                                    <td colspan="4" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-900">
                                         Nenhum Emprestimo encontrado.
                                     </td>
                                 </tr>
